@@ -1,4 +1,4 @@
-from models.parking-floor import ParkingFloor
+from models.parking_floor import ParkingFloor
 
 class ParkingLot():
 
@@ -11,6 +11,10 @@ class ParkingLot():
         self.eight_wheeler_rate = eight_wheeler_rate
 
     
+    def __str__(self):
+        parking_floors_str = ",".join(parking_floor.floor_name for parking_floor in self.parking_floors)
+        return f"ParkingLot(name={self.name}, address={self.address}, parking_floors={parking_floors_str}, two_wheeler_rate={self.two_wheeler_rate}, four_wheeler_rate={self.four_wheeler_rate}, eight_wheeler_rate={self.eight_wheeler_rate})"
+
     def add_parking_floor(self, floor_name):
         parking_floor = ParkingFloor(floor_name)
         parking_floor.add_parking_spot("TWO_WHEELER")

@@ -14,6 +14,9 @@ class Vehicle(ABC):
     def get_registration_no(self):
         pass
 
+    def __str__(self):
+        return f"Vehicle(vehicle_type={self.vehicle_type}, registration_no={self.registration_no})"
+
 class Car(Vehicle):
 
     def __init__(self, registration_no):

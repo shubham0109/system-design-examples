@@ -9,6 +9,9 @@ class ParkingSpot(ABC):
         self.is_occupied = is_occupied
         self.vehicle = None
 
+    def __str__(self):
+        return f"ParkingSpot(spot_type={self.spot_type}, spot_no={self.spot_no}, is_occupied={self.is_occupied}, vehicle={self.vehicle})"
+
     @abstractmethod
     def is_occupied(self):
         pass
